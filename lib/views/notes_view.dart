@@ -1,9 +1,13 @@
- import 'package:flutter/material.dart';
-class NotesView extends StatelessWidget {
-   const NotesView({super.key});
+import 'package:flutter/material.dart';
+import '../widgets/notes_view_body.dart';
 
-   @override
-   Widget build(BuildContext context) {
-     return Scaffold();
-   }
- }
+class NotesView extends StatelessWidget {
+  const NotesView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: NotesViewBody(),
+    );
+  }
+}
