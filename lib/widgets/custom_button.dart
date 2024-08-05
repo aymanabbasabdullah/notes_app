@@ -5,8 +5,6 @@ class CustomButton extends StatelessWidget {
   final String text;
   final Color colorText;
   final Color backgroundColo;
-
-
   final VoidCallback? onTap;
   @override
   Widget build(BuildContext context) {
@@ -14,17 +12,18 @@ class CustomButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 60,
+        width: MediaQuery.of(context).size.width,
+        height: 55,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(8),
           color:backgroundColo,
-
         ),
         child: Center(
           child: Text(
             text,
             style: TextStyle(
-              fontSize: 22,
+              fontSize: 20 ,
+              fontWeight: FontWeight.bold,
               color: colorText,
             ),
           ),
