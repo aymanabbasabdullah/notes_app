@@ -10,7 +10,7 @@ part 'notes__state.dart';
 
 class NotesCubit extends Cubit<NotesState> {
   NotesCubit() : super(NotesInitial());
-  List<NoteModel>?notes;
+  List<NoteModel> ? notes;
 
   ///method
   fetchAllNotes( )async{

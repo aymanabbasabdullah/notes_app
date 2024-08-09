@@ -49,14 +49,16 @@ class _AddNoteFormState extends State<AddNoteForm> {
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return CustomButton(
-                  isLoading: state is AddNoteLoading ? true : false ,
+                  isLoading: state is AddNoteLoading ? true : false,
                   onTap: () {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
-                      var noteModel = NoteModel(title: title!,
-                          color: Colors.red.value,
-                          date: DateTime.now().toString(),
-                          subTitle: subTitle!);
+                      var noteModel = NoteModel(
+                        title: title!,
+                        color: Colors.blue.value,
+                        date: DateTime.now().toString(),
+                        subTitle: subTitle!,
+                      );
                       //335
                       BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
                     } else {
