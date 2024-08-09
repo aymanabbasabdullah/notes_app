@@ -5,7 +5,7 @@ import '../widgets/notes_view_body.dart';
 
 class NotesView extends StatelessWidget {
   const NotesView({super.key});
-  static String id='notes_view';
+  static String id = 'notes_view';
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +13,9 @@ class NotesView extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
-            shape:  RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(24)
-            ),
+              isScrollControlled: true,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(24)),
               context: context,
               builder: (context) {
                 return const AddNoteBottomSheet();
@@ -29,4 +29,3 @@ class NotesView extends StatelessWidget {
     );
   }
 }
-
