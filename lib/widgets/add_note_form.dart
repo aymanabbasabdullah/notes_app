@@ -1,8 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:notesapp/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notesapp/models/note_model.dart';
+import 'package:notesapp/widgets/colors_list_view.dart';
 import 'package:notesapp/widgets/custom_button.dart';
 import '../constants.dart';
 import 'custom_text_filed.dart';
@@ -47,6 +49,10 @@ class _AddNoteFormState extends State<AddNoteForm> {
           const SizedBox(
             height: 32,
           ),
+          const ColorsListView(),
+          const SizedBox(
+            height: 32,
+          ),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return CustomButton(
@@ -54,8 +60,9 @@ class _AddNoteFormState extends State<AddNoteForm> {
                   onTap: () {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
-                      var currentDate =DateTime.now();
-                      var formattedCurrentDate =DateFormat ('dd-mm-yy').format(currentDate);
+                      var currentDate = DateTime.now();
+                      var formattedCurrentDate =
+                          DateFormat('dd-mm-yy').format(currentDate);
                       var noteModel = NoteModel(
                         title: title!,
                         color: Colors.blue.value,
